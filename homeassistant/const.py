@@ -1,5 +1,6 @@
 # coding: utf-8
 """ Constants used by Home Assistant components. """
+import os
 
 __version__ = "0.13.0.dev0"
 
@@ -154,7 +155,7 @@ SERVICE_MOVE_DOWN = 'move_down'
 SERVICE_STOP = 'stop'
 
 # #### API / REMOTE ####
-SERVER_PORT = 8123
+SERVER_PORT = int(os.environ.get('PORT', '8123'))
 
 URL_ROOT = "/"
 URL_API = "/api/"
